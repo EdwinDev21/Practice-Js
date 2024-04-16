@@ -1,0 +1,32 @@
+body {
+  background-color: #000f2a;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.box{
+  height: 282px;
+  width: 490px;
+  border-radius: 15px;
+  background-color: #103a55;
+  text-align: center;
+  padding: 30px;
+}
+
+.title{
+  font-size: 1rem;
+  color: #52ff95;
+}
+
+.paragraph{
+  font-size:x-large;
+  margin-top: 4rem ;
+  color: beige;
+}
