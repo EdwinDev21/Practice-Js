@@ -18,6 +18,7 @@ body {
   background-color: #103a55;
   text-align: center;
   padding: 30px;
+  position: relative;
 }
 
 .title{
@@ -29,4 +30,25 @@ body {
   font-size:x-large;
   margin-top: 4rem ;
   color: beige;
+}
+.hr{
+  margin-top: 15%;
+}
+.button {
+  position: absolute;
+  background-color: aqua;
+  height: 64px;
+  width: 64px;
+  border: none;
+  border-radius: 50%;
+  bottom: 0px;
+  left: 38%; 
+  transform: translate(50%, 50%);
+  cursor: pointer;
+}
+
+.img-button {
+  max-width: 80%;
+  max-height: 100px;
+  vertical-align: middle;
 }
