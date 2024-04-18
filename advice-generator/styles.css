@@ -22,8 +22,9 @@ body {
 }
 
 .title{
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #52ff95;
+  text-transform: uppercase;
 }
 
 .paragraph{
@@ -47,7 +48,7 @@ body {
   cursor: pointer;
 }
 
-.img-button {
+.img-button { 
   max-width: 80%;
   max-height: 100px;
   vertical-align: middle;
