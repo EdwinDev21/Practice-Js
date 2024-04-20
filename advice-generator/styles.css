@@ -53,10 +53,3 @@ body {
   max-height: 100px;
   vertical-align: middle;
 }
-
-
-@media(max-width: 600px){
-  .box{
-    width: 333px;
-  }
-}
