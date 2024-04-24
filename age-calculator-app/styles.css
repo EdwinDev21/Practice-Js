@@ -1,0 +1,118 @@
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  background-color: hsl(0, 0%, 94%);
+}
+
+#day{
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+#month{
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+#year{
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+
+label{
+  color: hsl(0, 1%, 44%);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.input{
+  border: 1px solid hsl(0, 0%, 86%) ;
+  font-weight: 700;
+  font-size: 18px;
+  padding-left: 11px;
+}
+
+input:focus{
+  outline-color:hsl(259, 100%, 65%);
+  outline-width: 0.5px;
+}
+input:hover{
+  border-color:hsl(259, 100%, 65%);
+}
+
+input::placeholder{
+  font-weight: 700;
+  font-size: 20px;
+  padding-left: 1px ;
+}
+
+.inputs{
+  display: flex;
+}
+
+.cont2,.cont3{
+  padding-left: 20px;
+}
+
+.arrow{
+  width: 60px;
+  background-color: hsl(259, 100%, 65%);
+  border-radius: 40px;
+  padding: 16px;
+  float: right;
+  margin-right: 10px;
+  transition: 0s background-color; 
+}
+.arrow:hover{
+  background-color: black;
+  transition-duration: 1s;
+}
+
+hr{
+    border-top:0px solid hsl(0, 0%, 86%);
+    width: 400px;
+    display: block;
+    margin-top: 40px;
+}
+
+#all{
+  position: relative;
+  background-color: white;
+  width: 550px;
+  border: 0px solid black;
+  border-radius: 20px 20px 100px 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding: 40px;
+}
+
+.textr{
+  font-size: 58px;
+  font-weight: 900;
+}
+
+p > span{
+  color: hsl(259, 100%, 65%);
+}
+
+#result{
+  margin-top: 20px;
+}
+
+#reqrd{
+    font-size: 10px;
+    color: red;
+    display: none;
+}

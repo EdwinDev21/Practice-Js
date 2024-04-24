@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="all">
+      <section class="inputs">
+        <div class="cont1">
+          <label for="day" id="idDay">Day</label><br />
+          <input id="day" class="input" type="text" placeholder="DD" />
+          <i><span id="reqrd" class="reqrd">The field is required</span></i>
+        </div>
+
+        <div class="cont2">
+          <label for="day" id="idMonth">Month</label><br />
+          <input id="month" class="input" type="text" placeholder="MM" />
+          <i><span id="reqrd" class="reqrd">The field is required</span></i>
+        </div>
+
+        <div class="cont3">
+          <label for="day" id="idYear">Year</label><br />
+          <input id="year" class="input" type="text" placeholder="YYYY" />
+          <i><span id="reqrd" class="reqrd">The field is required</span></i>
+        </div>
+      </section>
+
+      <img class="arrow" src="img/icon-arrow.svg" />
+      <hr />
+
+      <section id="result">
+        <i
+          ><p class="textr"><span>--</span>years</p></i
+        >
+        <i
+          ><p class="textr"><span>--</span>months</p></i
+        >
+        <i
+          ><p class="textr"><span>--</span>days</p></i
+        >
+      </section>
+    </div>
+  </body>
+  <script src="./app.js"></script>
+</html>
