@@ -1,156 +1,151 @@
-const elementLDay = document.getElementById("idDay");
-const elementLMonth = document.getElementById("idMonth");
-const elementLYear = document.getElementById("idYear");
+// Esta función se ejecuta cuando el contenido HTML ha sido completamente cargado y analizado
+document.addEventListener("DOMContentLoaded", function () {
+  // Seleccionar elementos del DOM
+  const elementLDay = document.getElementById("idDay");
+  const elementLMonth = document.getElementById("idMonth");
+  const elementLYear = document.getElementById("idYear");
 
-const elementIDay = document.getElementById("day");
-const elementIMonth = document.getElementById("month");
-const elementIYear = document.getElementById("year");
+  const elementIDay = document.getElementById("day");
+  const elementIMonth = document.getElementById("month");
+  const elementIYear = document.getElementById("year");
 
-const elementSDay = document.getElementById("reqrd1");
-const elementSMonth = document.getElementById("reqrd2");
-const elementSYear = document.getElementById("reqrd3");
+  const elementSDay = document.getElementById("reqrd1");
+  const elementSMonth = document.getElementById("reqrd2");
+  const elementSYear = document.getElementById("reqrd3");
 
-let checkDay;
-let checkMonth;
-let checkYear;
+  // Función para verificar si los campos están vacíos y mostrar mensajes de error
+  function showEmptyError() {
+    let day = elementIDay.value.trim();
+    let month = elementIMonth.value.trim();
+    let year = elementIYear.value.trim();
 
-let checkDayValid;
-let checkMonthValid;
-let checkYearValid;
+    let isEmpty = false;
 
-let totalResult;
-
-let correctDates;
-
-function showEmptyError() {
-  if (document.getElementById("day").value == "") {
-    elementLDay.stayle.display = "block";
-    elementLDay.style.color = "red";
-    elementIDay.style.border = "1px solid red";
-    checkDay = false;
-  } else {
-    elementLDay.stayle.display = "";
-    elementLDay.style.color = "";
-    elementIDay.style.border = "";
-    checkDay = true;
-  }
-
-  if (document.getElementById("month").value == "") {
-    elementLMonth.stayle.display = "block";
-    elementLMonth.style.color = "red";
-    elementIMonth.style.border = "1px solid red";
-    checkMonth = false;
-  } else {
-    elementLMonth.stayle.display = "";
-    elementLMonth.style.color = "";
-    elementIMonth.style.border = "";
-    checkMonth = true;
-  }
-
-  if (document.getElementById("year").value == "") {
-    elementLYear.stayle.display = "block";
-    elementLYear.style.color = "red";
-    elementIYear.style.border = "1px solid red";
-    checkYear = false;
-  } else {
-    elementLYear.stayle.display = "";
-    elementLYear.style.color = "";
-    elementIYear.style.border = "";
-    checkYear = true;
-  }
-
-  if (checkDay === true && checkMonth === true && checkYear === true) {
-    console.log("los espacios esta completados");
-    totalResult = true;
-  } else {
-    console.log("los espacios no esta completados");
-    totalResult = false;
-  }
-}
-
-function dayValid() {
-  elementSDay.style.display = "block";
-  elementLDay.style.color = "red";
-  elementIDay.style.border = "1px solid red";
-  elementSDay.innerText = "Must be a valid Day";
-}
-
-function montValid() {
-  elementSMonth.style.display = "block";
-  elementLMonth.style.color = "red";
-  elementIMonth.style.border = "1px solid red";
-  elementSMonth.innerText = "Must be a valid Month";
-}
-
-function yearValid() {
-  elementSYear.style.display = "block";
-  elementLYear.style.color = "red";
-  elementIYear.style.border = "1px solid red";
-  elementSYear.innerText = "Must be a valid Year";
-}
-
-function date() {
-  let day = elementIDay.value;
-  let month = elementIMonth.value;
-  let year = elementIYear.value;
-
-  if (totalResult === true) {
-    console.log("lest Go!");
-    if (
-      month == 1 ||
-      month == 3 ||
-      month == 5 ||
-      month == 7 ||
-      month == 8 ||
-      month == 10 ||
-      month == 12
-    ) {
-      if (day >= 1 && day <= 31) {
-        console.log("day ok");
-        checkDayValid = true;
-      } else {
-        console.log("day is not ok");
-        dayValid();
-        checkDayValid = false;
-      }
+    // Validar si el campo de día está vacío
+    if (day === "") {
+      elementLDay.style.color = "red";
+      elementIDay.style.borderColor = "red";
+      elementSDay.innerText = "The field is required";
+      elementSDay.style.display = "block";
+      isEmpty = true;
+    } else {
+      elementLDay.style.color = "";
+      elementIDay.style.borderColor = "";
+      elementSDay.style.display = "none";
     }
-    if (month == 4 || month == 6 || month == 9 || month == 11) {
-      if (day >= 1 && day <= 30) {
-        console.log("day ok");
-        checkDayValid = true;
-      } else {
-        console.log("day is not ok");
-        dayValid();
-        checkDayValid = false;
-      }
-    }
-    if (month >= 1 && month <= 12) {
-      console.log("month ok");
 
+    // Validar si el campo de mes está vacío
+    if (month === "") {
+      elementLMonth.style.color = "red";
+      elementIMonth.style.borderColor = "red";
+      elementSMonth.innerText = "The field is required";
+      elementSMonth.style.display = "block";
+      isEmpty = true;
+    } else {
+      elementLMonth.style.color = "";
+      elementIMonth.style.borderColor = "";
+      elementSMonth.style.display = "none";
+    }
+
+    // Validar si el campo de año está vacío
+    if (year === "") {
+      elementLYear.style.color = "red";
+      elementIYear.style.borderColor = "red";
+      elementSYear.innerText = "The field is required";
+      elementSYear.style.display = "block";
+      isEmpty = true;
+    } else {
+      elementLYear.style.color = "";
+      elementIYear.style.borderColor = "";
+      elementSYear.style.display = "none";
+    }
+
+    return !isEmpty;
+  }
+
+  // Función para validar si la fecha ingresada es válida
+  function validateDate() {
+    let day = parseInt(elementIDay.value);
+    let month = parseInt(elementIMonth.value);
+    let year = parseInt(elementIYear.value);
+
+    let checkDayValid = false;
+    let checkMonthValid = false;
+    let checkYearValid = false;
+
+    // Validar el día
+    if (day >= 1 && day <= 31) {
       checkDayValid = true;
     } else {
-      console.log("month is not ok");
-      montValid();
-      checkDayValid = false;
+      elementSDay.innerText = "Invalid date";
+      elementSDay.style.display = "block";
     }
+
+    // Validar el mes
+    if (month >= 1 && month <= 12) {
+      checkMonthValid = true;
+    } else {
+      elementSMonth.innerText = "Invalid date";
+      elementSMonth.style.display = "block";
+    }
+
+    // Validar el año
     if (year >= 1 && year <= 2024) {
-      console.log("year ok");
       checkYearValid = true;
     } else {
-      console.log("year is not ok");
-      yearValid();
-      checkYearValid = false;
+      elementSYear.innerText = "Invalid date";
+      elementSYear.style.display = "block";
+    }
+
+    return checkDayValid && checkMonthValid && checkYearValid;
+  }
+
+  // Función para realizar la operación de cálculo de la edad
+  function operation() {
+    let currentDate = new Date();
+    let currentYear = currentDate.getFullYear();
+    let currentMonth = currentDate.getMonth() + 1;
+    let currentDay = currentDate.getDate();
+
+    let inputDay = parseInt(elementIDay.value);
+    let inputMonth = parseInt(elementIMonth.value);
+    let inputYear = parseInt(elementIYear.value);
+
+    let ageYear = currentYear - inputYear;
+    let ageMonth = currentMonth - inputMonth;
+    let ageDay = currentDay - inputDay;
+
+    // Validar la fecha antes de realizar el cálculo
+    if (validateDate()) {
+      if (ageMonth < 0 || (ageMonth === 0 && ageDay < 0)) {
+        ageYear--;
+        ageMonth += 12;
+      }
+      if (ageDay < 0) {
+        ageMonth--;
+        let daysInLastMonth = new Date(
+          currentYear,
+          currentMonth - 1,
+          0
+        ).getDate();
+        ageDay += daysInLastMonth;
+      }
+      console.log("Día: ", ageDay, "Mes: ", ageMonth, "Año: ", ageYear);
+      document.getElementById("dayfinal").innerHTML = ageDay;
+      document.getElementById("monthfinal").innerHTML = ageMonth;
+      document.getElementById("yearfinal").innerHTML = ageYear;
+    } else {
+      console.error("Error en las fechas");
     }
   }
-  if (
-    checkDayValid === true &&
-    checkMonthValid === true &&
-    checkYearValid === true
-  ) {
-    console.log("Correct dates");
-    correctDates = true;
-  } else {
-    console.log("invalid dates");
-    correctDates = false;
-  }
-}
+
+  // Evento para el botón de calcular
+  document
+    .getElementById("calculateButton")
+    .addEventListener("click", function () {
+      // Verificar si los campos están vacíos y validar la fecha antes de realizar el cálculo
+      showEmptyError();
+      validateDate();
+      operation();
+    });
+});
