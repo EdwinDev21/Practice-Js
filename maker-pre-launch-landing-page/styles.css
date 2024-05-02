@@ -1,3 +1,65 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
   background-color: #080C20;
+}
+p{
+  color: #777F98;
+}
+
+.header{
+  padding: 48px 0px 0px 39px;
+}
+
+.main {
+  display: flex;
+  justify-content: center; 
+  margin: 40px 0px;
+}
+
+.imgs {
+  display: flex;
+  align-items: flex-start; 
+}
+
+.left-img, .center-img, .right-img {
+  flex: 1; /* Que ocupen el mismo espacio */
+  margin: 0 35px;
+}
+
+.center-img {
+  position: relative; /* Para posicionar el contenido encima de la imagen */
+}
+
+.content {
+  position: absolute;
+  top: 50%; /* Posición vertical: 50% del contenedor padre */
+  left: 50%; /* Posición horizontal: 50% del contenedor padre */
+  transform: translate(-50%, -50%); /* Centrar el contenido con respecto a su propio tamaño */
+  text-align: center; 
+  width: 100%;
+}
+
+.content h1 {
+  font-size: 48px; 
+  color: white;
+}
+.content h1 span{
+  font-size: 48px; 
+  color: aqua;
+}
+
+.content p {
+  font-size: 16px; 
+  margin-top: 15px; 
+  text-align:center;
+}
+
+.content img {
+  width: 30px; /* Ancho personalizado para la imagen */
+  margin-top: 50px; /* Espacio superior entre el párrafo y la imagen */
 }
