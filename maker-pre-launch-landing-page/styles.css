@@ -72,6 +72,7 @@ h2{
   display: flex;
   justify-content: center;
   padding:100px;
+  /* height: 100%vh; */
 }
 
 .section2{
@@ -97,4 +98,87 @@ h2{
   background-color: #093F68;
   padding: 30px;
   border-radius: 20px;
+}
+.plans{
+  padding-top: 20px;
+}
+.plans-descriptions{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.plans-descriptions h2{
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
+.boxes{
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.chart1{
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: #093F68 ;
+  margin-right: 20px;
+  border-radius: 10px;
+  margin: 15px 0px;
+  position: relative;
+}
+.chart2{
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: #3EE9E5;
+  margin-left: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.chart1 h3 {
+  color: white;
+}
+
+.chart2 p, .chart2 h2{
+  color:#093F68;
+}
+
+.chart1 h3, .chart1 p,.chart1 h2{
+  padding: 15px;
+}
+
+.chart1 h2,.chart2 h2{
+  font-size: 30px;
+}
+
+.chart2 h3, .chart2 p,.chart2 h2{
+  padding: 15px;
+}
+
+li {
+  padding: 5px;
+  list-style: none;
+}
+
+li img{
+  padding-right: 10px;
+  
+}
+
+.item1{
+  color: white;
+}
+.chart2 span {
+  font-size: 15px;
+}
+
+.icon-plans1{
+  position: absolute;
+  top: 0px; /* Ajusta la distancia desde arriba según sea necesario */
+  left: 0px; /* Ajusta la distancia desde la derecha según sea necesario */
+  transform: translate(50%, -50%);
 }
