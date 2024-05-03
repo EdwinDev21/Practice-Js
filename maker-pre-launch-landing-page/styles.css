@@ -63,3 +63,38 @@ p{
   width: 30px; /* Ancho personalizado para la imagen */
   margin-top: 50px; /* Espacio superior entre el párrafo y la imagen */
 }
+
+h2{
+  color: white;
+}
+
+.advantages{
+  display: flex;
+  justify-content: center;
+  padding:100px;
+}
+
+.section2{
+  padding: 50px;
+}
+
+.section2 h2  {
+  padding-top: 20px;
+}
+
+.section2 p {
+  padding-top: 20px;
+}
+
+.section1 h2  {
+  padding-top: 20px;
+}
+
+.section1 p{
+  padding-top: 20px;
+}
+.imgI{
+  background-color: #093F68;
+  padding: 30px;
+  border-radius: 20px;
+}
