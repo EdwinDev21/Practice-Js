@@ -225,3 +225,8 @@ input{
   color: beige;
   border-color: #3EE9E5;
 }
+.email-error{
+  display: none; 
+  
+}
+
